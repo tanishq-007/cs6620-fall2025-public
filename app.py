@@ -11,6 +11,9 @@ app = Flask(__name__)
 CORS(app)
 
 # Global variables for playlist management
+# In your Flask app file, update a comment or add a version identifier:
+# Version: 1.0.1
+# Built with GitHub Actions
 current_directory = None
 current_playlist = [] # Stores full paths on server
 audio_file_map = {}  # Maps filename to full path for nested directories
