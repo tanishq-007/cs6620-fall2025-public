@@ -1,4 +1,8 @@
+from flask import Flask
 from datetime import datetime
+
+app = Flask(__name__)
+
 
 @app.route('/')
 def hello():
@@ -10,6 +14,7 @@ def hello():
     <p><strong>Assignment:</strong> Automated EC2 Deployment</p>
     '''
 
+
 @app.route('/health')
 def health():
     return {
@@ -18,3 +23,7 @@ def health():
         'deployment_method': 'automated',
         'timestamp': datetime.now().isoformat()
     }
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=3000)
